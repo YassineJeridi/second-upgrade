@@ -65,7 +65,7 @@ const ProductCard = ({ product, isSelected, onToggle }) => {
                 <span className={styles.category}>{product.category}</span>
                 <h3 className={styles.name}>{product.name}</h3>
                 <div className={styles.footer}>
-                    <p className={styles.price}>${product.price.toFixed(2)}</p>
+                    <p className={styles.price}>DT {product.price.toFixed(2)}</p>
                     {product.url && (
                         <span className={styles.viewDetails}>
                             View Details <ExternalLink size={14} />

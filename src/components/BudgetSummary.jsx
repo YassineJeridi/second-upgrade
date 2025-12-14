@@ -17,7 +17,7 @@ const BudgetSummary = ({ selectedCount, totalPrice, onClear }) => {
                     <div className={styles.stat}>
                         <DollarSign size={20} />
                         <span className={styles.label}>Total Investment:</span>
-                        <span className={styles.totalPrice}>${totalPrice.toFixed(2)}</span>
+                        <span className={styles.totalPrice}>DT {totalPrice.toFixed(2)}</span>
                     </div>
                 </div>
 
