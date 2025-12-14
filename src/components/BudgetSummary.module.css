@@ -1,0 +1,129 @@
+.summary {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+}
+
+.stat svg {
+    color: #93c5fd;
+    flex-shrink: 0;
+}
+
+.label {
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
+.value {
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+}
+
+.totalPrice {
+    font-weight: 700;
+    font-size: 24px;
+    color: #3b82f6;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.divider {
+    width: 1px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.clearButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.clearButton:hover {
+    background: rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.5);
+    transform: translateY(-2px);
+}
+
+.clearButton:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .summary {
+        padding: 16px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .info {
+        width: 100%;
+        gap: 16px;
+        justify-content: space-between;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    .stat {
+        font-size: 14px;
+    }
+
+    .value {
+        font-size: 16px;
+    }
+
+    .totalPrice {
+        font-size: 20px;
+    }
+
+    .clearButton {
+        width: 100%;
+        justify-content: center;
+    }
+}
