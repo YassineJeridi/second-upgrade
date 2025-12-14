@@ -100,6 +100,14 @@ export const products = [
         category: "Studio",
         url: "https://www.splash-distribution.com/accueil/928-support-en-l-vertical-e-image-pl01.html"
     },
+    {
+        id: 25,
+        name: "White Paper Backdrop - BD Super White",
+        price: 280,
+        image: "/second-upgrade/assets/FOND PAPIER BD SUPER WHITE .png",
+        category: "Studio",
+        url: "https://www.splash-distribution.com/accueil/1142-fond-papier-bd-super-white-218m11m.html"
+    },
 
     // Accessories & Gimbals
     {
@@ -109,6 +117,14 @@ export const products = [
         image: "/second-upgrade/assets/DJI OSMO MOBILE 7P.png",
         category: "Gimbal",
         url: "https://www.splash-distribution.com/accueil/1629-dji-osmo-mobile-7p.html"
+    },
+    {
+        id: 26,
+        name: "DJI RS 4 Mini - Handheld Camera Gimbal Stabilizer",
+        price: 1040,
+        image: "/second-upgrade/assets/dji-rs-4-mini-handheld-gimbal-stabilizer.png",
+        category: "Gimbal",
+        url: "https://lenzcamera.com/products/dji-rs-4-mini-handheld-gimbal-stabilizer"
     },
     {
         id: 14,
@@ -179,6 +195,16 @@ export const products = [
         url: "https://www.splash-distribution.com/accueil/636-lecteurenregistreur-multicartes-sandisk-imagemate-pro-usb-c.html"
     },
 
+    // Monitor
+    {
+        id: 27,
+        name: "Feelworld LUT6E 6\" 4K HDMI Touchscreen Monitor",
+        price: 640,
+        image: "/second-upgrade/assets/Screen DSLR Camera.png",
+        category: "Monitor",
+        url: "https://lenzcamera.com/products/feelworld-lut6e-6inch-4k-hdmi-touchscreen-monitor?_pos=19&_sid=d2ce3fba0&_ss=r"
+    },
+
     // Protection
     {
         id: 22,
@@ -195,14 +221,14 @@ export const products = [
         image: "/second-upgrade/assets/Protection caméra arrière iPhone 13 Pro Black.png",
         category: "Protection",
         url: "https://itechstore.tn/accueil/4262-protection-cam%C3%A9ra-arri%C3%A8re-iphone-13-pro-black.html"
-    },{
-        id:24,
+    },
+    {
+        id: 24,
         name: "Kit d'accessoires 50 en 1 pour gopro",
-        price:100,
+        price: 100,
         image: "/second-upgrade/assets/GO PRO ACESSORIES.png",
         category: "Accessory",
-        url:"https://bk-cam.com/index.php?route=product/product&product_id=887"
-
+        url: "https://bk-cam.com/index.php?route=product/product&product_id=887"
     }
 ];
 
