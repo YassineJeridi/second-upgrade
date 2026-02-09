@@ -1,8 +1,8 @@
 .filterBar {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 0;
+    gap: 16px;
+    padding: 16px 0;
     flex-wrap: wrap;
 }
 
@@ -11,48 +11,53 @@
     align-items: center;
     gap: 8px;
     font-weight: 600;
-    color: #475569;
-    font-size: 14px;
+    color: #64748b;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 .label svg {
-    color: #64748b;
+    color: #475569;
 }
 
 .buttons {
     display: flex;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
 }
 
 .filterButton {
-    padding: 8px 16px;
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    color: #475569;
+    padding: 7px 16px;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    color: #94a3b8;
     font-weight: 500;
-    font-size: 13px;
+    font-size: 12px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
+    white-space: nowrap;
 }
 
 .filterButton:hover {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #cbd5e1;
 }
 
 .filterButton.active {
-    background: #2563eb;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
     color: white;
-    border-color: #2563eb;
+    border-color: transparent;
+    box-shadow: 0 2px 12px rgba(59, 130, 246, 0.3);
 }
 
 @media (max-width: 768px) {
     .filterBar {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        gap: 10px;
+        padding: 12px 0;
     }
 
     .buttons {
@@ -62,5 +67,8 @@
     .filterButton {
         flex: 1;
         min-width: fit-content;
+        text-align: center;
+        font-size: 11px;
+        padding: 6px 12px;
     }
 }

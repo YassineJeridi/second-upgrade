@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Package } from 'lucide-react';
+import { Package, Sparkles } from 'lucide-react';
 import ProductCard from './components/ProductCard';
 import BudgetSummary from './components/BudgetSummary';
 import CategoryFilter from './components/CategoryFilter';
@@ -10,12 +10,14 @@ import styles from './App.module.css';
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const {
-    selectedIds,
     toggleProduct,
+    setQuantity,
     clearSelection,
     totalPrice,
     selectedCount,
-    isSelected
+    totalItems,
+    isSelected,
+    getQuantity
   } = useSelectedProducts(products);
 
   const filteredProducts = selectedCategory === 'All'
@@ -27,20 +29,24 @@ function App() {
       <header className={styles.header}>
         <div className={styles.headerContent}>
           <div className={styles.titleSection}>
-            <Package size={32} className={styles.icon} />
+            <div className={styles.logoContainer}>
+              <Package size={28} className={styles.icon} />
+              <Sparkles size={14} className={styles.sparkle} />
+            </div>
             <div>
-              <h1 className={styles.title}>Equipment Wishlist & Budgeting Tool</h1>
-              <p className={styles.subtitle}>Redix Digital Solutions - Internal Investment Planning</p>
+              <h1 className={styles.title}>Equipment Wishlist</h1>
+              <p className={styles.subtitle}>Redix Digital Solutions - Investment Planning</p>
             </div>
           </div>
           <div className={styles.stats}>
             <div className={styles.statBadge}>
-              <span className={styles.statLabel}>Total Equipment</span>
               <span className={styles.statValue}>{products.length}</span>
+              <span className={styles.statLabel}>Products</span>
             </div>
+            <div className={styles.statDivider}></div>
             <div className={styles.statBadge}>
-              <span className={styles.statLabel}>Categories</span>
               <span className={styles.statValue}>{categories.length}</span>
+              <span className={styles.statLabel}>Categories</span>
             </div>
           </div>
         </div>
@@ -52,6 +58,7 @@ function App() {
             categories={categories}
             selectedCategory={selectedCategory}
             onCategoryChange={setSelectedCategory}
+            productCounts={products}
           />
 
           <div className={styles.grid}>
@@ -60,7 +67,9 @@ function App() {
                 key={product.id}
                 product={product}
                 isSelected={isSelected(product.id)}
+                quantity={getQuantity(product.id)}
                 onToggle={toggleProduct}
+                onQuantityChange={setQuantity}
               />
             ))}
           </div>
@@ -77,6 +86,7 @@ function App() {
 
       <BudgetSummary
         selectedCount={selectedCount}
+        totalItems={totalItems}
         totalPrice={totalPrice}
         onClear={clearSelection}
       />

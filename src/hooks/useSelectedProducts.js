@@ -1,38 +1,61 @@
 import { useState, useMemo } from 'react';
 
 export const useSelectedProducts = (products) => {
-    const [selectedIds, setSelectedIds] = useState(new Set());
+    // Map of product id -> quantity (0 means not selected)
+    const [quantities, setQuantities] = useState(new Map());
 
     const toggleProduct = (id) => {
-        setSelectedIds(prev => {
-            const newSet = new Set(prev);
-            if (newSet.has(id)) {
-                newSet.delete(id);
+        setQuantities(prev => {
+            const newMap = new Map(prev);
+            if (newMap.has(id) && newMap.get(id) > 0) {
+                newMap.delete(id);
             } else {
-                newSet.add(id);
+                newMap.set(id, 1);
             }
-            return newSet;
+            return newMap;
+        });
+    };
+
+    const setQuantity = (id, qty) => {
+        setQuantities(prev => {
+            const newMap = new Map(prev);
+            if (qty <= 0) {
+                newMap.delete(id);
+            } else {
+                newMap.set(id, qty);
+            }
+            return newMap;
         });
     };
 
     const clearSelection = () => {
-        setSelectedIds(new Set());
+        setQuantities(new Map());
     };
 
-    const { totalPrice, selectedCount } = useMemo(() => {
-        const selected = products.filter(p => selectedIds.has(p.id));
-        return {
-            totalPrice: selected.reduce((sum, p) => sum + p.price, 0),
-            selectedCount: selected.length
-        };
-    }, [selectedIds, products]);
+    const { totalPrice, selectedCount, totalItems } = useMemo(() => {
+        let total = 0;
+        let count = 0;
+        let items = 0;
+        for (const product of products) {
+            const qty = quantities.get(product.id) || 0;
+            if (qty > 0) {
+                total += product.price * qty;
+                count++;
+                items += qty;
+            }
+        }
+        return { totalPrice: total, selectedCount: count, totalItems: items };
+    }, [quantities, products]);
 
     return {
-        selectedIds,
+        quantities,
         toggleProduct,
+        setQuantity,
         clearSelection,
         totalPrice,
         selectedCount,
-        isSelected: (id) => selectedIds.has(id)
+        totalItems,
+        isSelected: (id) => (quantities.get(id) || 0) > 0,
+        getQuantity: (id) => quantities.get(id) || 0
     };
 };

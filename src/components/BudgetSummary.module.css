@@ -1,20 +1,27 @@
 .summary {
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: rgba(15, 23, 42, 0.85);
     color: white;
-    padding: 20px 0;
-    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+    padding: 16px 0;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.4);
     z-index: 100;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.3s ease;
+}
+
+.summary.active {
+    border-top-color: rgba(59, 130, 246, 0.3);
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -24,7 +31,7 @@
 .info {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
@@ -32,57 +39,60 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .stat svg {
-    color: #93c5fd;
+    color: #64748b;
     flex-shrink: 0;
 }
 
 .label {
-    color: #cbd5e1;
+    color: #64748b;
     font-weight: 500;
 }
 
 .value {
     font-weight: 700;
-    font-size: 18px;
-    color: #fff;
+    font-size: 16px;
+    color: #e2e8f0;
 }
 
 .totalPrice {
-    font-weight: 700;
-    font-size: 24px;
-    color: #3b82f6;
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    font-weight: 800;
+    font-size: 22px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .divider {
     width: 1px;
-    height: 32px;
-    background: rgba(255, 255, 255, 0.2);
+    height: 24px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .clearButton {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: rgba(239, 68, 68, 0.15);
-    color: #fca5a5;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-    border-radius: 8px;
+    gap: 6px;
+    padding: 8px 18px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
-    font-size: 14px;
+    font-size: 13px;
+    white-space: nowrap;
 }
 
 .clearButton:hover {
-    background: rgba(239, 68, 68, 0.25);
-    border-color: rgba(239, 68, 68, 0.5);
-    transform: translateY(-2px);
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.4);
+    transform: translateY(-1px);
 }
 
 .clearButton:active {
@@ -91,18 +101,18 @@
 
 @media (max-width: 768px) {
     .summary {
-        padding: 16px 0;
+        padding: 12px 0;
     }
 
     .container {
         flex-direction: column;
-        gap: 16px;
+        gap: 12px;
         padding: 0 16px;
     }
 
     .info {
         width: 100%;
-        gap: 16px;
+        gap: 12px;
         justify-content: space-between;
     }
 
@@ -111,15 +121,15 @@
     }
 
     .stat {
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .value {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .totalPrice {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .clearButton {

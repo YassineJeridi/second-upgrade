@@ -229,6 +229,36 @@ export const products = [
         image: "/second-upgrade/assets/GO PRO ACESSORIES.png",
         category: "Accessory",
         url: "https://bk-cam.com/index.php?route=product/product&product_id=887"
+    },
+
+    // Charger
+    {
+        id: 28,
+        name: "Chargeur avec Cable USB to Type C - 120W - White",
+        price: 27.9,
+        image: "https://www.tunisianet.com.tn/413691-large/chargeur-avec-cable-usb-to-type-c-120w-white.jpg",
+        category: "Cable",
+        url: "https://www.tunisianet.com.tn/chargeurs-et-cables-pour-telephones/82852-chargeur-avec-cable-usb-to-type-c-120w-white.html"
+    },
+
+    // Storage
+    {
+        id: 29,
+        name: "Disque Dur Interne Seagate 2 To 3.5\" - SATA III",
+        price: 155,
+        image: "https://mpshop.tn/29912-medium_default/disque-dur-interne-seagate-2-to-35.jpg",
+        category: "Accessory",
+        url: "https://mpshop.tn/fr/disque-dur-interne-hdd/7227-disque-dur-interne-seagate-2-to-35.html"
+    },
+
+    // Phone Support
+    {
+        id: 30,
+        name: "Support de Téléphone Flexible Col de Cygne Universel",
+        price: 14,
+        image: "https://mpshop.tn/36112-medium_default/support-de-telephone-flexible-col-de-cygne-universel.jpg",
+        category: "Accessory",
+        url: "https://mpshop.tn/fr/support-smartphone/7692-support-de-telephone-flexible-col-de-cygne-universel.html"
     }
 ];
 
